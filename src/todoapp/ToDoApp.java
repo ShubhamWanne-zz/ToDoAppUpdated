@@ -29,9 +29,9 @@ public class ToDoApp extends Application {
         
         stage.setTitle("To Do App");
         stage.setResizable(false);
-        stage.getIcons().add(new Image("file:icons8_To_Do_48px.png"));
+        stage.getIcons().add(new Image(getClass().getResource("/icons8_To_Do_48px.png").toURI().toString()));
         stage.setX(825);
-        stage.setY(225);
+        stage.setY(220);
         stage.setScene(scene);
         stage.show();
     }

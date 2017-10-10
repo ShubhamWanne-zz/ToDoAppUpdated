@@ -1,5 +1,5 @@
 .jfx-list-cell:selected{
-    -fx-background-color: #009688;
+    -fx-background-color: #B2DFDB;
 }
 .jfx-list-cell{
     -fx-background-insets : 0.0;
@@ -7,7 +7,7 @@
 }
 
 .jfx-list-cell:hover{
-    -fx-background-color: #009688;
+    -fx-background-color: #B2DFDB;
 }
 .jfx-list-view{
     -fx-background-insets : 0;

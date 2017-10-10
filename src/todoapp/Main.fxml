@@ -10,48 +10,62 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="todoapp.MainController">
+<StackPane fx:id="stack_root" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="todoapp.MainController">
    <children>
-      <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #009688;">
+      <AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="590.0" style="-fx-background-color: #ffffff;">
          <children>
-            <Label fx:id="header" layoutX="28.0" layoutY="27.0" textFill="WHITE">
+            <Pane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #009688;">
+               <children>
+                    <ImageView fitHeight="35.0" fitWidth="44.0" layoutX="14.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                          <Image url="/User.png" />
+                        </image>
+                    </ImageView>
+                  <Label fx:id="header" layoutX="66.0" layoutY="26.0" text="" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="info_img" fitHeight="32.0" fitWidth="32.0" layoutX="550.0" layoutY="17.0" onMouseClicked="#loadDialogueBox" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="/Info.png" />
+                      </image>
+                      </ImageView>
+               </children>
+            </Pane>
+            <JFXTextField fx:id="event_text" focusColor="#009688" labelFloat="true" layoutX="115.0" layoutY="157.0" prefHeight="35.0" prefWidth="295.0" promptText="Add To Do" unFocusColor="#009688">
                <font>
-                  <Font name="Noto Sans UI" size="16.0" />
+                  <Font name="Noto Sans" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="add_button" ellipsisString="" layoutX="423.0" layoutY="141.0" prefHeight="54.0" prefWidth="91.0" ripplerFill="WHITE" text=" ">
+               <graphic>
+                  <ImageView fx:id="add_image" fitHeight="48.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                  <Image url="/Add.png" />
+                </image>
+            </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="trash_button" layoutX="222.0" layoutY="523.0" prefHeight="63.0" prefWidth="161.0" ripplerFill="#009688" text="Trash Selected" textFill="#009688" wrapText="true">
+               <font>
+                  <Font name="Roboto" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="trash_image" fitHeight="41.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="/Trash.png" />
+                      </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXListView fx:id="task_space" layoutX="96.0" layoutY="221.0" prefHeight="302.0" prefWidth="393.0" />
+            <Label layoutX="240.0" layoutY="83.0" text="TODOs" textFill="#009688">
+               <font>
+                  <Font name="Noto Sans UI" size="36.0" />
                </font>
             </Label>
          </children>
-      </Pane>
-      <JFXTextField fx:id="event_text" focusColor="#009688" labelFloat="true" layoutX="115.0" layoutY="157.0" prefHeight="35.0" prefWidth="295.0" promptText="Add To Do" unFocusColor="#009688">
-         <font>
-            <Font name="Noto Sans" size="14.0" />
-         </font>
-      </JFXTextField>
-      <JFXButton fx:id="add_button" ellipsisString="" layoutX="423.0" layoutY="141.0" prefHeight="54.0" prefWidth="91.0" ripplerFill="#009688" text=" ">
-         <graphic>
-            <ImageView fx:id="add_image" fitHeight="48.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-            <Image url="/Add.png" />
-          </image>
-      </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton fx:id="trash_button" layoutX="222.0" layoutY="523.0" prefHeight="63.0" prefWidth="161.0" ripplerFill="#009688" text="Trash Selected" textFill="#009688" wrapText="true">
-         <font>
-            <Font name="Roboto" size="13.0" />
-         </font>
-         <graphic>
-            <ImageView fx:id="trash_image" fitHeight="41.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="/Trash.png" />
-                </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXListView fx:id="task_space" layoutX="116.0" layoutY="221.0" prefHeight="302.0" prefWidth="373.0" />
-      <Label layoutX="240.0" layoutY="83.0" text="TODOs" textFill="#009688">
-         <font>
-            <Font name="Noto Sans UI" size="36.0" />
-         </font>
-      </Label>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>
